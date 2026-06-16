@@ -1,0 +1,9 @@
+{
+  "extends": "@strapi/typescript-utils/tsconfigs/admin",
+  "include": ["../plugin.d.ts", "./", "./**/*.json"],
+  "exclude": ["node_modules/", "build/", "dist/", "**/*.test.ts", "src/plugins/**"],
+  "compilerOptions": {
+    "rootDir": "../",
+    "baseUrl": "."
+  }
+}

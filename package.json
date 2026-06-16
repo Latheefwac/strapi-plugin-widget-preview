@@ -1,0 +1,81 @@
+{
+  "name": "strapi-plugin-widget-preview",
+  "version": "0.1.0",
+  "description": "Preview images for dynamic-zone widgets in Strapi 5 — a Widget Gallery page plus an eye-icon preview injected into the native \"Pick one component\" picker. Auto-discovers a project's components (zero config).",
+  "keywords": [
+    "strapi",
+    "plugin",
+    "strapi-plugin",
+    "dynamic-zone",
+    "components",
+    "preview",
+    "gallery",
+    "admin"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "prepare": "strapi-plugin build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_GH_USERNAME/strapi-plugin-widget-preview.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^5.2.0",
+    "@strapi/strapi": "^5.0.0",
+    "@strapi/typescript-utils": "^5.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-router-dom": "^6.0.0 || ^7.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "widget-preview",
+    "displayName": "Widget Preview",
+    "description": "Visual previews for dynamic-zone widgets — gallery + in-picker eye."
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x"
+  }
+}
