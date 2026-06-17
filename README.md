@@ -64,6 +64,22 @@ export default () => ({
   scoped to the picker panel). If a future Strapi version changes the picker markup, the eye
   simply doesn't appear — nothing breaks.
 
+## Version switching
+
+Published versions follow [semantic versioning](https://semver.org/). Install a
+specific version, or switch between them, with the standard npm/yarn syntax:
+
+```bash
+npm install strapi-plugin-widget-preview            # latest
+npm install strapi-plugin-widget-preview@1.0.1      # exact version
+npm install strapi-plugin-widget-preview@^1.1.0     # latest 1.x
+
+# yarn
+yarn add strapi-plugin-widget-preview@1.0.0
+```
+
+All published versions are listed with `npm view strapi-plugin-widget-preview versions`.
+
 ## Development
 
 ```bash
@@ -71,6 +87,28 @@ yarn install
 yarn build      # @strapi/sdk-plugin build → dist/
 yarn watch      # rebuild on change
 ```
+
+## Releasing (maintainers)
+
+Publishing is automated via GitHub Actions (`.github/workflows/publish.yml`).
+Pushing a `v*` git tag builds and publishes that version to npm.
+
+**One-time setup:** add an `NPM_TOKEN` secret to the repo
+(Settings → Secrets and variables → Actions). Create the token at npmjs.com
+(Access Tokens → Generate → *Automation*).
+
+**To cut a release:**
+
+```bash
+npm version patch   # 1.0.0 → 1.0.1  (bug fixes)
+npm version minor   # 1.0.1 → 1.1.0  (new features)
+npm version major   # 1.1.0 → 2.0.0  (breaking changes)
+
+git push && git push --tags
+```
+
+`npm version` bumps `package.json`, commits, and creates the matching git tag.
+Pushing the tag triggers the workflow, which runs the build and `npm publish`.
 
 ## License
 
