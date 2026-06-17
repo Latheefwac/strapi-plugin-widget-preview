@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-widget-preview",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Preview images for dynamic-zone widgets in Strapi 5 — a Widget Gallery page plus an eye-icon preview injected into the native \"Pick one component\" picker. Auto-discovers a project's components (zero config).",
   "keywords": [
     "strapi",
@@ -13,6 +13,7 @@
     "admin"
   ],
   "license": "MIT",
+  "author": "Latheefwac",
   "type": "commonjs",
   "exports": {
     "./package.json": "./package.json",
@@ -39,15 +40,19 @@
     "watch": "strapi-plugin watch",
     "watch:link": "strapi-plugin watch:link",
     "verify": "strapi-plugin verify",
-    "prepare": "strapi-plugin build"
+    "prepare": "strapi-plugin build",
+    "prepublishOnly": "strapi-plugin build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GH_USERNAME/strapi-plugin-widget-preview.git"
+    "url": "git+https://github.com/Latheefwac/strapi-plugin-widget-preview.git"
   },
+  "bugs": {
+    "url": "https://github.com/Latheefwac/strapi-plugin-widget-preview/issues"
+  },
+  "homepage": "https://github.com/Latheefwac/strapi-plugin-widget-preview#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "public"
   },
   "dependencies": {},
   "devDependencies": {
