@@ -24,7 +24,7 @@ export interface Catalog {
  * Auto-discover the host project's components and shape them into a catalog
  * the admin can render. Zero-config: name ← `info.displayName`, description ←
  * `info.description`, key ← uid with dots→hyphens (image lives at
- * `<imageBaseUrl>/<key>.png`).
+ * `<imageBaseUrl>/<key>.jpg`).
  */
 const catalog = ({ strapi }: { strapi: Core.Strapi }) => ({
   getCatalog(): Catalog {

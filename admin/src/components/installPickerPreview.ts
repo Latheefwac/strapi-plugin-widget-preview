@@ -34,7 +34,7 @@ export function installPickerPreview(): void {
   };
   const onEsc = (e: KeyboardEvent) => e.key === 'Escape' && closePreview();
 
-  const imageUrl = (key: string) => `${imageBaseUrl.replace(/\/$/, '')}/${key}.png`;
+  const imageUrl = (key: string) => `${imageBaseUrl.replace(/\/$/, '')}/${key}.jpg`;
 
   const openPreview = (it: CatalogItem) => {
     closePreview();
