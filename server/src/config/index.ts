@@ -3,7 +3,7 @@
  * `'widget-preview': { config: { ... } }`).
  *
  * - imageBaseUrl: where preview images are served from. Default `/widget-previews`
- *   (drop `<key>.png` into the host project's `public/widget-previews/`).
+ *   (drop `<key>.jpg` into the host project's `public/widget-previews/`).
  * - includeCategories: if set, only these component categories appear. `null` = all.
  * - excludeComponents: component UIDs to hide (e.g. nested sub-components).
  * - onlyDocumented: if true, only components with a non-empty `info.description`

@@ -26,15 +26,15 @@ Rebuild the admin: `yarn build && yarn develop`.
 
 ## Add preview images
 
-Each widget's image lives at `public/widget-previews/<key>.png`, where `<key>` is the
+Each widget's image lives at `public/widget-previews/<key>.jpg`, where `<key>` is the
 component UID with dots replaced by hyphens:
 
 | Component UID          | File                          |
 | ---------------------- | ----------------------------- |
-| `home.hero`            | `public/widget-previews/home-hero.png` |
-| `common.video`         | `public/widget-previews/common-video.png` |
+| `home.hero`            | `public/widget-previews/home-hero.jpg` |
+| `common.video`         | `public/widget-previews/common-video.jpg` |
 
-Files in `public/` are served immediately (no restart) at `/widget-previews/<key>.png`.
+Files in `public/` are served immediately (no restart) at `/widget-previews/<key>.jpg`.
 Widgets without an image show a "No preview yet" placeholder.
 
 ## Configuration (optional)
