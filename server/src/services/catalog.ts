@@ -15,9 +15,15 @@ export interface CatalogGroup {
   label: string;
   items: CatalogItem[];
 }
+export interface CatalogPage {
+  uid: string;
+  name: string;
+  components: string[];
+}
 export interface Catalog {
   imageBaseUrl: string;
   groups: CatalogGroup[];
+  pages: CatalogPage[];
 }
 
 /**
@@ -66,7 +72,27 @@ const catalog = ({ strapi }: { strapi: Core.Strapi }) => ({
         items: groupsMap[category].sort((a, b) => a.name.localeCompare(b.name)),
       }));
 
-    return { imageBaseUrl, groups };
+    // Discover the "pages": every content-type with a dynamic zone, mapped to
+    // the component UIDs that zone allows. Lets the gallery filter widgets by
+    // the page they can actually be placed on.
+    const contentTypes = (strapi.contentTypes ?? {}) as Record<string, any>;
+    const pages: CatalogPage[] = [];
+    for (const uid of Object.keys(contentTypes)) {
+      const ct = contentTypes[uid];
+      const attrs = (ct?.attributes ?? {}) as Record<string, any>;
+      const comps = new Set<string>();
+      for (const name of Object.keys(attrs)) {
+        const a = attrs[name];
+        if (a?.type === 'dynamiczone' && Array.isArray(a.components)) {
+          a.components.forEach((u: string) => comps.add(u));
+        }
+      }
+      if (comps.size === 0) continue;
+      pages.push({ uid, name: ct?.info?.displayName ?? uid, components: [...comps] });
+    }
+    pages.sort((a, b) => a.name.localeCompare(b.name));
+
+    return { imageBaseUrl, groups, pages };
   },
 });
 
