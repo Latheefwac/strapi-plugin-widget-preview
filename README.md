@@ -2,7 +2,7 @@
 
 Visual previews for dynamic-zone widgets in **Strapi 5**:
 
-- A **Widget Gallery** page (left menu) showing every component with a preview image, name and description.
+- A **Widget Gallery** page (left menu) showing every component with a preview image, name and description — with **search** and a **page (dynamic-zone) filter** so you can narrow to the widgets allowed on a given content-type.
 - An **eye-icon preview** injected into the native **"Pick one component"** picker — click it to see what a widget looks like before adding it.
 
 **Zero config** — the plugin auto-discovers the components registered in your project. Drop a screenshot per widget into `public/widget-previews/` and you're done.
@@ -35,7 +35,10 @@ component UID with dots replaced by hyphens:
 | `common.video`         | `public/widget-previews/common-video.jpg` |
 
 Files in `public/` are served immediately (no restart) at `/widget-previews/<key>.jpg`.
-Widgets without an image show a "No preview yet" placeholder.
+
+> **Note (since 2.0.0):** the gallery only lists widgets that **have** a preview image.
+> Widgets without a screenshot (typically nested sub-components) are hidden rather than
+> shown as an empty "No preview yet" placeholder. Add an image to make a widget appear.
 
 ## Configuration (optional)
 
