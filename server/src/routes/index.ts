@@ -1,19 +1,5 @@
-/**
- * Admin-only route: the panel fetches the auto-discovered catalog from here.
- * Mounted at `/widget-preview/catalog` behind admin authentication.
- */
+import admin from './admin';
+
 export default {
-  admin: {
-    type: 'admin',
-    routes: [
-      {
-        method: 'GET',
-        path: '/catalog',
-        handler: 'catalog.find',
-        config: {
-          policies: [],
-        },
-      },
-    ],
-  },
+  admin,
 };
