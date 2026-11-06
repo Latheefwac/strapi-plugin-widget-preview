@@ -1,5 +1,5 @@
-import auditLog from './audit-log';
+import catalog from './catalog';
 
 export default {
-  'audit-log': auditLog,
+  catalog,
 };

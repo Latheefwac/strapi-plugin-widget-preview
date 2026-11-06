@@ -1,15 +1,9 @@
 {
   "extends": "@strapi/typescript-utils/tsconfigs/server",
-  "include": ["./src"],
+  "include": ["../plugin.d.ts", "./", "./**/*.json"],
+  "exclude": ["node_modules/", "build/", "dist/", "**/*.test.ts"],
   "compilerOptions": {
     "rootDir": "../",
-    "baseUrl": ".",
-    "strict": true,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitOverride": true,
-    "noFallthroughCasesInSwitch": true,
-    "exactOptionalPropertyTypes": false,
-    "composite": false,
-    "incremental": false
+    "baseUrl": "."
   }
 }
