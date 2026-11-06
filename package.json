@@ -81,6 +81,6 @@
     "description": "Visual previews for dynamic-zone widgets — gallery + in-picker eye."
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x"
+    "node": ">=18.0.0"
   }
 }
